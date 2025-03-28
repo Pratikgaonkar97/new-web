@@ -7,472 +7,123 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Tiro+Devanagari+Marathi:wght@400;700&display=swap');
-        
-        :root {
-            --gold: #d4af37;
-            --rose-gold: #b76e79;
-            --ivory: #fffff0;
-            --dark-red: #8b0000;
-            --shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        body {
-            font-family: 'Tiro Devanagari Marathi', serif;
-            margin: 0;
-            padding: 0;
-            background: var(--ivory);
-            color: #333;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-        
-        .petals {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .petal {
-            position: absolute;
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.7;
-            animation: falling linear infinite;
-        }
-        
-        @keyframes falling {
-            0% { transform: translate(0, -10%) rotate(0deg); }
-            100% { transform: translate(calc(var(--random-x) * 100px), 100vh) rotate(360deg); }
-        }
-        
-        .header {
-            text-align: center;
-            padding: 6rem 0 4rem;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(183, 110, 121, 0.9));
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/golden.png');
-            opacity: 0.2;
-        }
-        
-        .header h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
-            margin: 0.5rem 0;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, #fff, #f9f295);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.3));
-        }
-        
-        .header p {
-            color: white;
-            font-size: 1.8rem;
-            margin: 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .invitation-container {
-            max-width: 900px;
-            margin: -4rem auto 3rem;
-            padding: 4rem;
-            background: white;
-            box-shadow: var(--shadow);
-            position: relative;
-            border-radius: 5px;
-            z-index: 1;
-            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
-            transform-style: preserve-3d;
-        }
-        
-        .invitation-container::before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 15px;
-            border: 2px solid var(--gold);
-            border-radius: 5px;
-            pointer-events: none;
-            z-index: -1;
-            transform: translateZ(-1px);
-        }
-        
-        .corner {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.8;
-        }
-        
+        :root { --gold: #d4af37; --rose-gold: #b76e79; --ivory: #fffff0; --dark-red: #8b0000; --shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        body { font-family: 'Tiro Devanagari Marathi', serif; margin: 0; padding: 0; background: var(--ivory); color: #333; line-height: 1.8; overflow-x: hidden; }
+        .petals { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+        .petal { position: absolute; background-size: contain; background-repeat: no-repeat; opacity: 0.7; animation: falling linear infinite; }
+        @keyframes falling { 0% { transform: translate(0, -10%) rotate(0deg); } 100% { transform: translate(calc(var(--random-x) * 100px), 100vh) rotate(360deg); } }
+        .header { text-align: center; padding: 6rem 0 4rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(183, 110, 121, 0.9)); position: relative; overflow: hidden; box-shadow: var(--shadow); clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+        .header::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/golden.png'); opacity: 0.2; }
+        .header h1 { font-family: 'Great Vibes', cursive; font-size: 5rem; margin: 0.5rem 0; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); letter-spacing: 2px; background: linear-gradient(45deg, #fff, #f9f295); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.3)); }
+        .header p { color: white; font-size: 1.8rem; margin: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); font-family: 'Playfair Display', serif; }
+        .invitation-container { max-width: 900px; margin: -4rem auto 3rem; padding: 4rem; background: white; box-shadow: var(--shadow); position: relative; border-radius: 5px; z-index: 1; background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png'); transform-style: preserve-3d; }
+        .invitation-container::before { content: ''; position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; border: 2px solid var(--gold); border-radius: 5px; pointer-events: none; z-index: -1; transform: translateZ(-1px); }
+        .corner { position: absolute; width: 80px; height: 80px; background-size: contain; background-repeat: no-repeat; opacity: 0.8; }
         .corner-tl { top: 20px; left: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23d4af37" d="M100,0 L0,0 L0,100 C20,80 40,60 60,40 80,20 100,0 100,0 Z"/></svg>'); }
         .corner-tr { top: 20px; right: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23d4af37" d="M0,0 L100,0 L100,100 C80,80 60,60 40,40 20,20 0,0 0,0 Z"/></svg>'); }
         .corner-bl { bottom: 20px; left: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23d4af37" d="M100,100 L0,100 L0,0 C20,20 40,40 60,60 80,80 100,100 100,100 Z"/></svg>'); }
         .corner-br { bottom: 20px; right: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23d4af37" d="M0,100 L100,100 L100,0 C80,20 60,40 40,60 20,80 0,100 0,100 Z"/></svg>'); }
-        
-        .couple-image {
-            width: 350px; /* Adjust size as needed */
-            height: 350px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 2rem auto;
-            display: block;
-            border: 5px solid var(--gold);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .gods {
-            text-align: center;
-            font-size: 1.6rem;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            color: var(--gold);
-            font-weight: bold;
-            letter-spacing: 1px;
-            position: relative;
-            background: linear-gradient(45deg, rgba(255,248,240,0.8), rgba(255,255,255,0.9));
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .gods::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-        
+        .couple-image { width: 350px; height: 350px; border-radius: 50%; object-fit: cover; margin: 2rem auto; display: block; border: 5px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .gods { text-align: center; font-size: 1.6rem; margin: 2rem 0; padding: 1.5rem; color: var(--gold); font-weight: bold; letter-spacing: 1px; position: relative; background: linear-gradient(45deg, rgba(255,248,240,0.8), rgba(255,255,255,0.9)); border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .gods::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
         .couple-section { margin: 4rem 0; perspective: 1000px; }
-        
-        .person-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 3rem 0;
-            padding: 3rem 2rem;
-            background: white;
-            border-radius: 10px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.5s ease;
-            transform-style: preserve-3d;
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9));
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        
-        .person-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-        
-        .person-name {
-            font-size: 2.8rem;
-            color: var(--rose-gold);
-            margin: 1rem 0;
-            position: relative;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-        
-        .person-name::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--rose-gold), var(--gold));
-            border-radius: 3px;
-        }
-        
+        .person-card { display: flex; flex-direction: column; align-items: center; margin: 3rem 0; padding: 3rem 2rem; background: white; border-radius: 10px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.5s ease; transform-style: preserve-3d; background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9)); border: 1px solid rgba(212, 175, 55, 0.3); }
+        .person-card:hover { transform: translateY(-10px) rotateX(5deg); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .person-name { font-size: 2.8rem; color: var(--rose-gold); margin: 1rem 0; position: relative; font-family: 'Playfair Display', serif; font-weight: 700; }
+        .person-name::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--rose-gold), var(--gold)); border-radius: 3px; }
         .person-details { text-align: center; margin-top: 1.5rem; line-height: 1.8; font-size: 1.2rem; }
-        
-        .wedding-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--dark-red);
-            margin: 3rem 0;
-            position: relative;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .wedding-title::before, .wedding-title::after {
-            content: '❧';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--gold);
-            font-size: 2rem;
-        }
-        
-        .wedding-title::before { left: -50px; }
-        .wedding-title::after { right: -50px; }
-        
-        .event-card {
-            margin: 4rem 0;
-            padding: 3rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9));
-        }
-        
-        .event-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--gold), var(--rose-gold));
-        }
-        
-        .event-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-        
-        .event-title {
-            color: var(--dark-red);
-            font-size: 2rem;
-            margin: 0 0 2rem;
-            text-align: center;
-            position: relative;
-            font-family: 'Playfair Display', serif;
-            padding-bottom: 1rem;
-        }
-        
-        .event-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--rose-gold), var(--gold));
-            border-radius: 3px;
-        }
-        
+        .wedding-title { text-align: center; font-size: 2.5rem; color: var(--dark-red); margin: 3rem 0; position: relative; font-family: 'Playfair Display', serif; }
+        .wedding-title::before, .wedding-title::after { content: '❧'; position: absolute; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 2rem; }
+        .wedding-title::before { left: -50px; } .wedding-title::after { right: -50px; }
+        .event-card { margin: 4rem 0; padding: 3rem; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; transition: all 0.5s ease; background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9)); }
+        .event-card::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(to bottom, var(--gold), var(--rose-gold)); }
+        .event-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .event-title { color: var(--dark-red); font-size: 2rem; margin: 0 0 2rem; text-align: center; position: relative; font-family: 'Playfair Display', serif; padding-bottom: 1rem; }
+        .event-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--rose-gold), var(--gold)); border-radius: 3px; }
         .event-details { text-align: center; line-height: 1.8; font-size: 1.2rem; }
-        
-        .family-section {
-            margin: 5rem 0;
-            padding: 3rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9));
-        }
-        
+        .family-section { margin: 5rem 0; padding: 3rem; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); opacity: 0; transform: translateY(50px); transition: all 1s ease; background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9)); }
         .family-section.visible { opacity: 1; transform: translateY(0); }
-        
-        .section-title {
-            color: var(--dark-red);
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            font-family: 'Playfair Display', serif;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--rose-gold), var(--gold));
-            border-radius: 3px;
-        }
-        
+        .section-title { color: var(--dark-red); font-size: 2rem; text-align: center; margin-bottom: 2rem; font-family: 'Playfair Display', serif; position: relative; }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--rose-gold), var(--gold)); border-radius: 3px; }
         .family-members { column-count: 2; column-gap: 3rem; }
-        
-        .family-names {
-            margin-bottom: 1.5rem;
-            break-inside: avoid;
-            font-size: 1.1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
+        .family-names { margin-bottom: 1.5rem; break-inside: avoid; font-size: 1.1rem; padding-left: 1.5rem; position: relative; }
         .family-names::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
-        
-        .footer {
-            text-align: center;
-            padding: 4rem;
-            background: linear-gradient(135deg, rgba(51, 51, 51, 0.95), rgba(34, 34, 34, 0.95));
-            color: white;
-            margin-top: 4rem;
-            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-            position: relative;
-        }
-        
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-        
+        .footer { text-align: center; padding: 4rem; background: linear-gradient(135deg, rgba(51, 51, 51, 0.95), rgba(34, 34, 34, 0.95)); color: white; margin-top: 4rem; clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%); position: relative; }
+        .footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
         .footer p { font-size: 1.2rem; margin: 0; }
-        
-        @media (max-width: 768px) {
-            .header h1 { font-size: 3.5rem; }
-            .header p { font-size: 1.4rem; }
-            .invitation-container { margin: -2rem 1rem 2rem; padding: 2rem; }
-            .corner { width: 50px; height: 50px; }
-            .person-name { font-size: 2.2rem; }
-            .wedding-title { font-size: 2rem; }
-            .wedding-title::before, .wedding-title::after { display: none; }
-            .family-members { column-count: 1; }
-            .event-card, .person-card { padding: 2rem; }
-            .couple-image { width: 250px; height: 250px; }
-        }
+        @media (max-width: 768px) { .header h1 { font-size: 3.5rem; } .header p { font-size: 1.4rem; } .invitation-container { margin: -2rem 1rem 2rem; padding: 2rem; } .corner { width: 50px; height: 50px; } .person-name { font-size: 2.2rem; } .wedding-title { font-size: 2rem; } .wedding-title::before, .wedding-title::after { display: none; } .family-members { column-count: 1; } .event-card, .person-card { padding: 2rem; } .couple-image { width: 250px; height: 250px; } }
     </style>
 </head>
 <body>
     <div class="petals" id="petals"></div>
-    
     <div class="header">
         <h1 class="animate__animated animate__fadeInDown">प्रतीक & प्रियंका</h1>
         <p class="animate__animated animate__fadeInUp animate__delay-1s">२१ एप्रिल २०२५ | मोरया बँक्वेट, उरण</p>
     </div>
-    
     <div class="invitation-container">
         <div class="corner corner-tl"></div>
         <div class="corner corner-tr"></div>
         <div class="corner corner-bl"></div>
         <div class="corner corner-br"></div>
-        
         <div class="gods animate__animated animate__fadeIn">
-            ।। श्री गजानन प्रसन्न ।।<br>
-            ।। श्री वेताळ प्रसन्न ।।<br>
-            ।। श्री केपादेवी प्रसन्न ।।<br>
-            ।। श्री वेतोबा प्रसन्न ।।
+            ।। श्री गजानन प्रसन्न ।।<br>।। श्री वेताळ प्रसन्न ।।<br>।। श्री केपादेवी प्रसन्न ।।<br>।। श्री वेतोबा प्रसन्न ।।
         </div>
-        
         <div class="greeting animate__animated animate__fadeIn animate__delay-1s" style="text-align: center; font-size: 1.4rem; margin: 2rem 0; color: #666;">
             सप्रेम नमस्कार वि. वि.
         </div>
-        
         <img src="_DSC8749.jpg" alt="Pratik and Priyanka" class="couple-image animate__animated animate__fadeIn animate__delay-1s">
-        
         <div class="invitation-text animate__animated animate__fadeIn animate__delay-1s" style="text-align: center; font-size: 1.3rem; margin: 2rem 0;">
             आमच्या येथे श्री कृपेकरून आमचा सुपुत्र
         </div>
-        
         <div class="couple-section">
             <div class="person-card animate__animated animate__fadeInLeft">
                 <div class="person-name">चि. प्रतीक</div>
                 <div class="person-details">
-                    (सौ. दीपा व श्री. देवेंद्र ज्ञानदेव गावकर<br>
-                    मु. पो. उभादांडा-मुठवाडी,<br>
-                    ता. वेंगुर्ला, जि. सिंधुदुर्ग यांचा सुपुत्र)
+                    (सौ. दीपा व श्री. देवेंद्र ज्ञानदेव गावकर<br>मु. पो. उभादांडा-मुठवाडी,<br>ता. वेंगुर्ला, जि. सिंधुदुर्ग यांचा सुपुत्र)
                 </div>
             </div>
-            
             <div style="text-align: center; margin: 3rem 0; position: relative;">
                 <span style="display: inline-block; padding: 0 2rem; background: white; position: relative; z-index: 1; font-size: 2.5rem; color: var(--gold);" class="animate__animated animate__pulse animate__infinite animate__slower">💑</span>
                 <div style="position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); z-index: 0;"></div>
             </div>
-            
             <div class="person-card animate__animated animate__fadeInRight">
                 <div class="person-name">चि. सौ. कां. प्रियंका</div>
                 <div class="person-details">
-                    (सौ. विद्या व श्री. नरेंद्र परशुराम गावंड<br>
-                    मु. पो. पिरकोन-आवरे,<br>
-                    ता. उरण, जि. रायगड यांची सुकन्या)
+                    (सौ. विद्या व श्री. नरेंद्र परशुराम गावंड<br>मु. पो. पिरकोन-आवरे,<br>ता. उरण, जि. रायगड यांची सुकन्या)
                 </div>
             </div>
         </div>
-        
         <div class="wedding-title animate__animated animate__fadeIn animate__delay-1s">।। शुभविवाह ।।</div>
-        
         <div class="invitation-text animate__animated animate__fadeIn animate__delay-1s" style="text-align: center; margin: 3rem 0; font-size: 1.2rem; line-height: 1.9;">
             मिती चैत्र कृ. ८ शके १९४६ सोमवार दि. २१ एप्रिल २०२५ रोजी दुपारी १२ वा. ३८ मि. या शुभमुहूर्तावर करण्याचे योजिले आहे। तरी या मंगल समयी आपण सहकुटुंब, सहपरिवार व मित्रमंडळीसह उपस्थित राहून वधू-वरास शुभ आशीर्वाद द्यावेत, ही नम्र विनंती।
         </div>
-        
         <div class="invitation-text animate__animated animate__fadeIn animate__delay-1s" style="text-align: center; margin: 3rem 0; font-size: 1.2rem; line-height: 1.9;">
             अक्षतांची उधळण, मांगल्यांचा क्षण, दोन घराण्यांचा संगम, संसार सरितेचा उगम, दोन परिवारांचे मिलन, आपण सहकुटुंब, सहपरिवार लग्नाला यावे हे गावकर परिवाराकडून आग्रहाचे निमंत्रण...
         </div>
-        
         <div class="event-card animate__animated animate__fadeInUp">
             <h3 class="event-title">• हळदी समारंभ •</h3>
             <div class="event-details">
-                रविवार दि. २० एप्रिल २०२५ रोजी सायं. ०६.०० वाजता<br>
-                ३०६, बी-विंग, अमृत टॉवर,<br>
-                बदलापूर गाव, चिंतामणी चौकच्या बाजूला,<br>
-                बदलापूर (पश्चिम), ठाणे - ४२१५०३.<br>
-                ९७५७०१३०३७ / ८६९८२७५०६५
+                रविवार दि. २० एप्रिल २०२५ रोजी सायं. ०६.०० वाजता<br>३०६, बी-विंग, अमृत टॉवर,<br>बदलापूर गाव, चिंतामणी चौकच्या बाजूला,<br>बदलापूर (पश्चिम), ठाणे - ४२१५०३.<br>९७५७०१३०३७ / ८६९८२७५०६५
             </div>
         </div>
-        
         <div class="event-card animate__animated animate__fadeInUp animate__delay-1s">
             <h3 class="event-title">• विवाह स्थळ •</h3>
             <div class="event-details">
-                मोरया बँक्वेट ए/सी हॉल,<br>
-                खोपटा कॉन्टिनेंटल बस स्टॉप,<br>
-                खोपटा ब्रिजजवळ, उरण,<br>
-                नवी मुंबई - ४१०२०६.
+                मोरया बँक्वेट ए/सी हॉल,<br>खोपटा कॉन्टिनेंटल बस स्टॉप,<br>खोपटा ब्रिजजवळ, उरण,<br>नवी मुंबई - ४१०२०६.
             </div>
         </div>
-        
         <div class="event-card animate__animated animate__fadeInUp animate__delay-1s">
             <h3 class="event-title">• निवास स्थान •</h3>
             <div class="event-details">
-                १२०४, जगजीत एन्क्लेव्ह,<br>
-                आर. एम. खर्डी,<br>
-                पोलिस रोड, खर्डीपाडा (दिवा),<br>
-                ठाणे - ४२१२०४.
+                १२०४, जगजीत एन्क्लेव्ह,<br>आर. एम. खर्डी,<br>पोलिस रोड, खर्डीपाडा (दिवा),<br>ठाणे - ४२१२०४.
             </div>
         </div>
-        
         <div class="event-card animate__animated animate__fadeInUp animate__delay-1s">
             <h3 class="event-title">• स्वागत समारंभ व प्रीती भोजन •</h3>
             <div class="event-details">
-                दुपारी ०१.०० ते ०३.०० वाजेपर्यंत<br><br>
-                गाडी अमृत टॉवर बदलापूर (प) येथून सकाळी ठीक ०८.३० वा. सुटेल.
+                दुपारी ०१.०० ते ०३.०० वाजेपर्यंत<br><br>गाडी अमृत टॉवर बदलापूर (प) येथून सकाळी ठीक ०८.३० वा. सुटेल.
             </div>
         </div>
-        
         <div class="family-section" id="familySection">
             <h3 class="section-title">• आपले स्नेहांकित •</h3>
             <div class="family-members">
@@ -485,21 +136,17 @@
                 <div class="family-names">श्रीमती सुभद्रा ज्ञानदेव गावकर. (आजी)</div>
                 <div class="family-names">श्री. अशोक तुकाराम वेंगुर्लेकर. (मामा)</div>
             </div>
-            
             <div class="invitation-text" style="margin-top: 3rem; text-align: center; font-size: 1.2rem;">
                 वरील विनंतीस मान देऊन अगत्य येण्याची कृपा करावी.
             </div>
-            
             <div class="invitation-text" style="text-align: center; margin-top: 2rem; font-size: 1.1rem; line-height: 1.8;">
                 समस्त गावकर, चोपडेकर, चोडणकर, गिरप, बांदेकर, हरम, भाबल, तारी, आरावंदेकर, प्रभू, पराडकर, टिकम, सारंग, कोचरेकर, वेंगुर्लेकर, मणचेकर, कुबल, देसाई, गावंड, पाटील, जोशी परिवार आणि आप्तेष्ट.
             </div>
         </div>
     </div>
-    
     <div class="footer">
         <p>© २०२५ प्रतीक आणि प्रियंका यांचा विवाह</p>
     </div>
-
     <script>
         function createPetals() {
             const petalsContainer = document.getElementById('petals');
@@ -520,7 +167,6 @@
                 petalsContainer.appendChild(petal);
             }
         }
-        
         function checkScroll() {
             const familySection = document.getElementById('familySection');
             const sectionTop = familySection.getBoundingClientRect().top;
@@ -530,7 +176,6 @@
                 window.removeEventListener('scroll', checkScroll);
             }
         }
-        
         window.addEventListener('load', () => {
             createPetals();
             window.addEventListener('scroll', checkScroll);
