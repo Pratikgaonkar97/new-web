@@ -7,143 +7,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Tiro+Devanagari+Marathi:wght@400;700&display=swap');
-        
-        :root {
-            --gold: #d4af37;
-            --rose-gold: #b76e79;
-            --ivory: #fffff0;
-            --dark-red: #8b0000;
-            --shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        body {
-            font-family: 'Tiro Devanagari Marathi', serif;
-            margin: 0;
-            padding: 0;
-            background: var(--ivory);
-            color: #333;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-        
-        .petals {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .petal {
-            position: absolute;
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.7;
-            animation: falling linear infinite;
-        }
-        
-        @keyframes falling {
-            0% { transform: translate(0, -10%) rotate(0deg); }
-            100% { transform: translate(calc(var(--random-x) * 100px), 100vh) rotate(360deg); }
-        }
-        
-        .header {
-            text-align: center;
-            padding: 6rem 0 4rem;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(183, 110, 121, 0.9));
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/golden.png');
-            opacity: 0.2;
-        }
-        
-        .header h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
-            margin: 0.5rem 0;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, #fff, #f9f295);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.3));
-        }
-        
-        .header p {
-            color: white;
-            font-size: 1.8rem;
-            margin: 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .welcome-text {
-            text-align: center;
-            padding: 4rem;
-            font-size: 1.6rem;
-            color: var(--dark-red);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .welcome-image {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 2rem auto;
-            display: block;
-            border: 5px solid var(--gold);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .welcome-link {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background: var(--gold);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: 'Playfair Display', serif;
-            transition: all 0.3s ease;
-        }
-        
-        .welcome-link:hover {
-            background: var(--rose-gold);
-            transform: translateY(-5px);
-        }
+        :root { --gold: #d4af37; --rose-gold: #b76e79; --ivory: #fffff0; --dark-red: #8b0000; --shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        body { font-family: 'Tiro Devanagari Marathi', serif; margin: 0; padding: 0; background: var(--ivory); color: #333; line-height: 1.8; overflow-x: hidden; }
+        .petals { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+        .petal { position: absolute; background-size: contain; background-repeat: no-repeat; opacity: 0.7; animation: falling linear infinite; }
+        @keyframes falling { 0% { transform: translate(0, -10%) rotate(0deg); } 100% { transform: translate(calc(var(--random-x) * 100px), 100vh) rotate(360deg); } }
+        .header { text-align: center; padding: 6rem 0 4rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(183, 110, 121, 0.9)); position: relative; overflow: hidden; box-shadow: var(--shadow); clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+        .header::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/golden.png'); opacity: 0.2; }
+        .header h1 { font-family: 'Great Vibes', cursive; font-size: 5rem; margin: 0.5rem 0; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); letter-spacing: 2px; background: linear-gradient(45deg, #fff, #f9f295); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.3)); }
+        .header p { color: white; font-size: 1.8rem; margin: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); font-family: 'Playfair Display', serif; }
+        .welcome-text { text-align: center; padding: 4rem; font-size: 1.6rem; color: var(--dark-red); max-width: 800px; margin: 0 auto; }
+        .welcome-image { width: 300px; height: 300px; border-radius: 50%; object-fit: cover; margin: 2rem auto; display: block; border: 5px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .welcome-link { display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: var(--gold); color: white; text-decoration: none; border-radius: 5px; font-family: 'Playfair Display', serif; transition: all 0.3s ease; }
+        .welcome-link:hover { background: var(--rose-gold); transform: translateY(-5px); }
     </style>
 </head>
 <body>
     <div class="petals" id="petals"></div>
-    
     <div class="header">
         <h1 class="animate__animated animate__fadeInDown">प्रतीक & प्रियंका</h1>
         <p class="animate__animated animate__fadeInUp animate__delay-1s">२१ एप्रिल २०२५ | मोरया बँक्वेट, उरण</p>
     </div>
-    
     <div class="welcome-text animate__animated animate__fadeIn animate__delay-1s">
         आपले हार्दिक स्वागत आहे!<br>
         <img src="_DSC8696.jpg" alt="Pratik and Priyanka" class="welcome-image">
-        प्रतीक आणि प्रियंका यांच्या शुभविवाहाच्या मंगल प्रसंगी आपणास आमंत्रण आहे!
+        प्रतीक आणि प्रियंका यांच्या शुभविवाहाच्या मंगल प्रसंगी आपणास आमंत्रित करताना आम्हाला आनंद होत आहे।
         <a href="details.html" class="welcome-link">संपूर्ण माहिती पहा</a>
     </div>
-
     <script>
         function createPetals() {
             const petalsContainer = document.getElementById('petals');
@@ -152,7 +42,6 @@
                 const petal = document.createElement('div');
                 petal.className = 'petal';
                 const size = Math.random() * 20 + 10;
-                const posX = Math.random();
                 const delay = Math.random() * 5;
                 const duration = Math.random() * 10 + 10;
                 petal.style.width = `${size}px`;
